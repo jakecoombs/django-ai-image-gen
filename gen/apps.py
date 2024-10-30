@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class GenConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'gen'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "gen"

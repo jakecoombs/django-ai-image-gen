@@ -20,6 +20,23 @@
             {{ form }}
             <input type="submit" value="Generate">
         </form>
+        <h2>Generated Images</h2>
+        <div style="display: flex;flex-wrap: wrap;justify-content: center;">
+            {% if error_message %}
+            <p>{{ error_message }}</p>
+            {% else %}
+            {% for image_url in images %}
+            <div style="margin: 10px; text-align: center; transition: all 0.3s ease;">
+                <img src="{{ image_url }}" alt="Generated Image"
+                    style="width: 300px;border: 1px solid #ccc;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);transition: all 0.3s ease;">
+                <br>
+                <a href="{{ image_url }}" download
+                    style="display: block;margin-top: 5px;text-decoration: none;transition: all 0.3s ease;">Download
+                    Image</a>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
     </main>
 </body>
 
