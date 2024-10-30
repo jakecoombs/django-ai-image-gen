@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generate Image</title>
+    <meta name="theme-color" content="#11191f">
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>Generate an image with AI</h1>
+        <form action="{% url 'gen:generate_image' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Generate">
+        </form>
+    </main>
+</body>
+
+</html>
